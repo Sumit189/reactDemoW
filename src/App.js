@@ -26,7 +26,7 @@ function App() {
   var fetchedOptions = []
 
   function optionGetter(){
-    fetch("http://localhost:8081/options?ques_id="+currentQ,{
+    fetch("https://demo-app-wysa.herokuapp.com/options?ques_id="+currentQ,{
           headers: myheaders,
           method: "GET",
         }).then((response) =>{
@@ -67,7 +67,7 @@ function App() {
   }
 
   useEffect(() => {
-    fetch("http://localhost:8081/question?ques_id="+currentQ,{
+    fetch("https://demo-app-wysa.herokuapp.com/question?ques_id="+currentQ,{
       headers: myheaders,
       method: "GET",
     }).then((qResponse) =>{
@@ -109,7 +109,7 @@ function App() {
         input_type: inputType
       }
       console.log(JSON.stringify(data));
-      fetch("http://localhost:8081/onboarding",{
+      fetch("https://demo-app-wysa.herokuapp.com/onboarding",{
         headers: myheaders,
         method: "POST",
         body: JSON.stringify(data),
