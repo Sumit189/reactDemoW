@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import Button from "react-bootstrap/Button";
 import TimePicker from 'react-time-picker';
 
-function App() {
+function Onboarding() {
   const [timeInput, changeTime] = useState(null);  
   const questionStyle = {
     fontSize: 22,
@@ -106,7 +106,8 @@ function App() {
       const data = {
         question: ques,
         answer: ans,
-        input_type: inputType
+        input_type: inputType,
+        user_id: localStorage.getItem("user_id"),
       }
       console.log(JSON.stringify(data));
       fetch("https://demo-app-wysa.herokuapp.com/onboarding",{
@@ -143,4 +144,4 @@ function App() {
   );
 }
 
-export default App;
+export default Onboarding;
